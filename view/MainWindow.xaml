@@ -1,0 +1,52 @@
+﻿<Window x:Class="OOP_lab3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP_lab3"
+        xmlns:localVM="clr-namespace:OOP_lab3.viewmodel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="850">
+    
+    <Window.DataContext>
+        <localVM:MainViewModel />
+    </Window.DataContext>
+    <Border Background="FloralWhite" CornerRadius="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <StackPanel Background="Aqua" />
+            
+            <TextBlock Text="The GAME"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="Black"
+                       FontSize="22"
+                       Margin="20,0,0,0"/>
+            
+            <StackPanel Grid.Row="1" Background="Aqua">
+                <RadioButton Command="{Binding GameViewCommand}"  Content="Start New Game"/>
+                <RadioButton Command="{Binding ProfileViewCommand}" Content="Profile"/>
+            </StackPanel>
+            
+            <TextBlock TextAlignment="Center" FontSize="22" Text="Place For Ur ADs" Width="250" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10" Margin="5" Grid.Column="1" Background="Aqua" />
+            
+            <ContentControl Grid.Column="1" Grid.Row="1" Margin="15" Content="{Binding CurrentView}" />
+            
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Background="Aqua">
+                <Button Command="{Binding LogINCommand}" Margin="15,5,15,5" FontSize="12" Content="Log IN"></Button>
+                <Button Command="{Binding LogOUTCommand}"  HorizontalAlignment="Right" Margin="5,5,15,5" FontSize="12" Content="Log OUT"></Button>
+            </StackPanel>
+            
+        </Grid>
+        
+    </Border>
+</Window>

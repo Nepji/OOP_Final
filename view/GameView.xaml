@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="OOP_lab3.view.GameView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:OOP_lab3.view"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="530"
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Horizontal" Background="Aqua" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Name="Level" Margin="15,3,110,2" Content="Level: "/>
+            <Label Name="INFO" FontSize="19" Content="TEXT"/>
+            <Label Margin="15,3,15,2" Content="Are you ready?"/>
+            <Button Click="Button_Clicked" Margin="1,1,15,2" Content="START"></Button>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Height="300" Width="250" Margin="15">
+                <Label Margin="5,0,0,0" VerticalAlignment="Center" Content="Your Field" Background="MediumAquamarine" />
+                <Canvas Focusable="True" KeyDown="KeyIsDown" Name="ActorGrid" Margin="5,5" Height="250" Width="250" Background="Gray" />
+            </StackPanel>
+            
+            <StackPanel Height="300" Width="250" Margin="15">
+                <Label Margin="5,0,0,0" VerticalAlignment="Center" Content="Opponent Field |Tut Budet Bot|" Background="MediumAquamarine" />
+                <Canvas Name="BotGrid" Margin="5,5" Height="250" Width="250"  Background="Gray"/>
+            </StackPanel>
+           
+        </StackPanel>
+    </Grid>
+</UserControl>

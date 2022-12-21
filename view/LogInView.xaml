@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="OOP_lab3.view.LogInView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:OOP_lab3.view"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="530">
+    
+    
+    <Grid VerticalAlignment="Center" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        
+            
+        
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="LogIn"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="20,0,20,5">
+                <TextBlock Text="Loggin: "/>
+                <TextBox  Name="LogIN_Name" Width="85" Margin="5,0,0,0"/>
+            </StackPanel>
+            <StackPanel  Grid.Row="2" Orientation="Horizontal" Margin="20,0,20,0">
+                <TextBlock Text="Password: "/>
+                <TextBox Name="LogIN_Password" Width="70" Margin="5,0,0,15"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" HorizontalAlignment="Center">
+                <Button Click="LogIN" Content="Log IN"/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" HorizontalAlignment="Center">
+                <Label Name="LogIN_INFO_label"/>
+            </StackPanel>
+        
+        
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+            <TextBlock Text="Registration"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Margin="20,0,20,5">
+            <TextBlock Text="Loggin: "/>
+            <TextBox Name="Register_login" Width="85" Margin="5,0,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" Margin="20,0,20,5">
+            <TextBlock Text="NickName: "/>
+            <TextBox Name="Register_nickname" Width="60" Margin="5,0,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" Margin="20,0,20,0">
+            <TextBlock Text="Password: "/>
+            <TextBox Name="Register_password" Width="70" Margin="5,0,0,15"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center">
+            <Button Click="Registration" Content="Registration"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" HorizontalAlignment="Center">
+            <Label Name="Register_INFO_label"/>
+        </StackPanel>
+        
+        
+        
+        
+    </Grid>
+</UserControl>
