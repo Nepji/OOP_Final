@@ -17,7 +17,7 @@
             <Label Name="Level" Margin="15,3,110,2" Content="Level: "/>
             <Label Name="INFO" FontSize="19" Content="TEXT"/>
             <Label Margin="15,3,15,2" Content="Are you ready?"/>
-            <Button Click="Button_Clicked" Margin="1,1,15,2" Content="START"></Button>
+            <Button Click="Button_Clicked" Name="Button" Margin="1,1,15,2" Content="START"></Button>
         </StackPanel>
         
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">

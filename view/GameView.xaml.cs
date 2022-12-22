@@ -48,6 +48,7 @@ namespace OOP_lab3.view
         public void OverLabel()
         {
             INFO.Content = "Game Over";
+            Button.Content = "Start";
         }
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
@@ -76,7 +77,13 @@ namespace OOP_lab3.view
         private void Button_Clicked(object sender, RoutedEventArgs e)
         {
             if (!LogIN._logINed) return;
-            if(GameInfo.gamestarted) return;
+            if (GameInfo.gamestarted)
+            {
+                GameInfo.GameOver();
+                return;
+            }
+
+            Button.Content = "Stop";
             Level.Content = "Level: "+ GameInfo.currentgamelevel;
             GameInfo.gamestarted = true;
             GameInfo.StartNewGame();
