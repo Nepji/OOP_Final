@@ -30,16 +30,6 @@
         <StackPanel Grid.Row="1" Name="history" HorizontalAlignment="Center">
             <Label FontSize="14" HorizontalAlignment="Center" Content="10 Last Games"/>
             <Label Content="ID | MaxLvl | LivesOnEnd "/>
-            <Label Name="Label_1" />
-            <Label Name="Label_2"/>
-            <Label Name="Label_3"/>
-            <Label Name="Label_4"/>
-            <Label Name="Label_5"/>
-            <Label Name="Label_6"/>
-            <Label Name="Label_7"/>
-            <Label Name="Label_8"/>
-            <Label Name="Label_9"/>
-            <Label Name="Label_10"/>
         </StackPanel>
         
     </Grid>

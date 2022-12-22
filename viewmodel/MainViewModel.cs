@@ -52,7 +52,11 @@ namespace OOP_lab3.viewmodel
                     CurrentView = LogINVM;
             });
 
-            LogOUTCommand = new RelayCommand(o => { LogIN.LogOut(); });
+            LogOUTCommand = new RelayCommand(o =>
+            {
+                LogIN.LogOut();
+                CurrentView = null;
+            });
         }
     }
     
