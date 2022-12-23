@@ -42,7 +42,7 @@ namespace OOP_lab3.view
         {
             INFO.Content = "";
             for (int i = 0; i < GameInfo.curentLives; i++)
-                INFO.Content += "*";
+                INFO.Content += "♡";
         }
 
         public void OverLabel()

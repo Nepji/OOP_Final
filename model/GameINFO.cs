@@ -40,6 +40,7 @@ namespace OOP_lab3.model.Static
         {
             currentgamelevel++;
             gamestarted = false;
+            window.Button.Content = "Start";
         }
 
         public void GameOver()
