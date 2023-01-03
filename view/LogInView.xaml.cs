@@ -1,19 +1,23 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using OOP_lab3.model.Static;
+
 
 namespace OOP_lab3.view
 {
     public partial class LogInView : UserControl
     {
+        private LogIN logIn = null;
         public LogInView()
         {
             InitializeComponent();
+            logIn = model.Static.LogIN.Initializate();
         }
 
         private void Registration(object sender, RoutedEventArgs e)
         {
             if (!CheckRegister()) return;
-            model.Static.LogIN.NewAccount(Register_login.Text, Register_nickname.Text, Register_password.Text);
+            logIn.NewAccount(Register_login.Text, Register_nickname.Text, Register_password.Text);
             LogIN_INFO_label.Content = "Done!";
         }
 
@@ -30,7 +34,7 @@ namespace OOP_lab3.view
         private void LogIN(object sender, RoutedEventArgs e)
         {
             if (!CheckLogIN()) return;
-            if(!model.Static.LogIN.authLogIN(LogIN_Name.Text,LogIN_Password.Text))
+            if(!logIn.authLogIN(LogIN_Name.Text,LogIN_Password.Text))
             {
                 LogIN_INFO_label.Content = "Incorrect data";
                 return;

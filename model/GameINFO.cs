@@ -15,7 +15,8 @@ namespace OOP_lab3.model.Static
 
         public GameINFO(GameView window)
         {
-            this.account = LogIN.authAccount;
+            LogIN logIn = LogIN.Initializate();
+            this.account = logIn.authAccount;
             this.window = window;
             curentLives = 10;
             currentgamelevel = 0;

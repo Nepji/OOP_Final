@@ -17,11 +17,13 @@ namespace OOP_lab3.view
     {
         private Account _account;
         private GameINFO GameInfo;
+        private LogIN logIn = null;
         
         public GameView()
         {
+            logIn = LogIN.Initializate();
             InitializeComponent();
-            if (!LogIN._logINed)
+            if (!logIn._logINed)
             {
                 INFO.Content = "You need to Authorise first!";
                 return;
@@ -52,7 +54,7 @@ namespace OOP_lab3.view
         }
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
-            if(!GameInfo.gamestarted || GameInfo._game==null || GameInfo.gameover || !LogIN._logINed) return;
+            if(!GameInfo.gamestarted || GameInfo._game==null || GameInfo.gameover || !logIn._logINed) return;
             switch (e.Key)
             {
                 case Key.W:
@@ -76,7 +78,7 @@ namespace OOP_lab3.view
 
         private void Button_Clicked(object sender, RoutedEventArgs e)
         {
-            if (!LogIN._logINed) return;
+            if (!logIn._logINed) return;
             if (GameInfo.gamestarted)
             {
                 GameInfo.GameOver();

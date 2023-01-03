@@ -6,21 +6,27 @@ using Newtonsoft.Json;
 namespace OOP_lab3.model.Static
 {
 
-        public static class LogIN
+        public class LogIN
     {
-        public static bool _logINed { get; private set; }
-        public static Account authAccount { get; private set; }
-        public static List<Account> accountsList= new List<Account>();
+        public bool _logINed { get; private set; }
+        public Account authAccount { get; private set; }
+        public List<Account> accountsList= new List<Account>();
+        private const string _fileDBName = "usersDB.json";
+        private static LogIN LogIn = null;
 
-        private static string _fileDBName = "usersDB.json";
+        public static LogIN Initializate()
+        {
+            if (LogIn == null) LogIn = new LogIN();
+            return LogIn;
+        }
 
-        public static void LogOut()
+        public void LogOut()
         {
             _logINed = false;
             authAccount = null;
         }
 
-        public static bool authLogIN(string loggin, string password)
+        public bool authLogIN(string loggin, string password)
         {
             Load();
             if (accountsList == null) return false;
@@ -36,7 +42,7 @@ namespace OOP_lab3.model.Static
             return false;
         }
 
-        public static void NewAccount(string loggin, string nickname, string password)
+        public void NewAccount(string loggin, string nickname, string password)
         {
             Load();
             authAccount = new Account(loggin, nickname, password);
@@ -45,12 +51,12 @@ namespace OOP_lab3.model.Static
             Refresh();
         }
 
-        private static void Load()
+        private void Load()
         {
             string json = File.ReadAllText(_fileDBName);
             accountsList = JsonConvert.DeserializeObject<List<Account>>(json);
         }
-        public static void Refresh()
+        public void Refresh()
         {
             string json = JsonConvert.SerializeObject(accountsList);
             File.WriteAllText(@_fileDBName, json);

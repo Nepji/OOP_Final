@@ -16,6 +16,7 @@ namespace OOP_lab3.viewmodel
         public ProfileViewModel ProfileVM { get; set; }
         public GameViewModel GameVM { get; set; }
         private object _currentView;
+        private LogIN logIn = null;
 
         
         
@@ -31,6 +32,7 @@ namespace OOP_lab3.viewmodel
 
         public MainViewModel()
         {
+            logIn = model.Static.LogIN.Initializate();
             ProfileVM = new ProfileViewModel();
             GameVM = new GameViewModel();
             LogINVM = new LogINViewModel();
@@ -48,13 +50,13 @@ namespace OOP_lab3.viewmodel
 
             LogINCommand = new RelayCommand(o =>
             {
-                if(!LogIN._logINed) 
+                if(!logIn._logINed) 
                     CurrentView = LogINVM;
             });
 
             LogOUTCommand = new RelayCommand(o =>
             {
-                LogIN.LogOut();
+                logIn.LogOut();
                 CurrentView = null;
             });
         }

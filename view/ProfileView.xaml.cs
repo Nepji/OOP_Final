@@ -5,13 +5,15 @@ namespace OOP_lab3.view
 {
     public partial class ProfileView : UserControl
     {
+        private LogIN logIn = null;
         public ProfileView()
         {
             InitializeComponent();
-            if (LogIN._logINed)
+            logIn = model.Static.LogIN.Initializate();
+            if (logIn._logINed)
             {
-                NickName.Content = LogIN.authAccount.nickname;
-                GamesCount.Content = LogIN.authAccount.GamesCount.ToString();
+                NickName.Content = logIn.authAccount.nickname;
+                GamesCount.Content = logIn.authAccount.GamesCount.ToString();
                 History();
             }
 
@@ -21,13 +23,13 @@ namespace OOP_lab3.view
         {
             for (int i = 1; i <= 10; i++)
             {
-                if (LogIN.authAccount.GamesCount < i) break;
+                if (logIn.authAccount.GamesCount < i) break;
                 Label labla = new Label();
                 labla.Content =
-                    LogIN.authAccount.historyNotes[LogIN.authAccount.historyNotes.Count - i].gameID +
-                    "  |  " + LogIN.authAccount.historyNotes[LogIN.authAccount.historyNotes.Count - i]
-                        .maxlevelofgame + "  |  " + LogIN.authAccount
-                        .historyNotes[LogIN.authAccount.historyNotes.Count - i].countoflives;
+                    logIn.authAccount.historyNotes[logIn.authAccount.historyNotes.Count - i].gameID +
+                    "  |  " + logIn.authAccount.historyNotes[logIn.authAccount.historyNotes.Count - i]
+                        .maxlevelofgame + "  |  " + logIn.authAccount
+                        .historyNotes[logIn.authAccount.historyNotes.Count - i].countoflives;
                 ;
                 history.Children.Add(labla);
             }
