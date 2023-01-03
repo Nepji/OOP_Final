@@ -30,6 +30,7 @@ namespace OOP_lab3.model
         {
             this.historyNotes.Add(new HistoryNote(countoflives,maxlevelofgame,historyNotes.Count));
             GamesCount++;
+            LogIN.Refresh();
         }
 
         public bool LogNPass(string login, string password)

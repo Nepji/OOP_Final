@@ -33,7 +33,6 @@ namespace OOP_lab3.model.Static
                 Refresh();
                 return true;
             }
-
             return false;
         }
 
