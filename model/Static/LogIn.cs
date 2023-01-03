@@ -39,6 +39,7 @@ namespace OOP_lab3.model.Static
 
         public static void NewAccount(string loggin, string nickname, string password)
         {
+            Load();
             authAccount = new Account(loggin, nickname, password);
             accountsList.Add(authAccount);
             _logINed = true;
